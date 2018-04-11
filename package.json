@@ -1,0 +1,22 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivam123425/Natours-css-project.git"
+  },
+  "author": "Shivam Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shivam123425/Natours-css-project/issues"
+  },
+  "homepage": "https://github.com/shivam123425/Natours-css-project#readme",
+  "devDependencies": {
+    "node-sass": "^4.8.3"
+  }
+}
