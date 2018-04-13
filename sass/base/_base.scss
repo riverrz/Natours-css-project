@@ -1,0 +1,16 @@
+/* Universal Selector(*) will select everything and apply the contents of it to every element */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;  /* Everything now inherits body's box-sizing:border-box, this is better way to do it */
+}
+html {
+    /* font-size: 10px;   Using this doesnt allow user to enlarge the font view it better so instead we use 
+    the % w.r.to 16px default browser font, so 10px is 62.5% of 16px*/
+    font-size: 62.5%;
+}
+body {
+    box-sizing: border-box;
+}
