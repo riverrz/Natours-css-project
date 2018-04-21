@@ -12,10 +12,8 @@
         display: inline-block;
         background: linear-gradient(to right, $color-primary-light, $color-primary-dark);
         -webkit-background-clip: text;
+        background-clip: text;
         color:transparent;
-    }
-    &__text {
-
     }
     &:hover {
         transform: scale(1.05) translateY(-2rem);
