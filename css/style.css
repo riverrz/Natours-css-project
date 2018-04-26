@@ -665,6 +665,7 @@ body {
 
 .navigation__list {
   position: absolute;
+  visibility: hidden;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -702,6 +703,9 @@ body {
 .navigation__checkbox:checked ~ .navigation__nav {
   opacity: 1;
   width: 100%; }
+
+.navigation__checkbox:checked ~ .navigation__nav .navigation__list {
+  visibility: visible; }
 
 .navigation__icon {
   position: relative;
