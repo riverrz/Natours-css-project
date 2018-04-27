@@ -9,7 +9,19 @@
 html {
     /* font-size: 10px;   Using this doesnt allow user to enlarge the font view it better so instead we use 
     the % w.r.to 16px default browser font, so 10px is 62.5% of 16px*/
-    font-size: 62.5%;
+    font-size: 62.5%; // 1 rem = 10px
+
+    @include respond(tab-land) { // width <1200 ?
+        font-size: 56.25%; // 1rem = 9px;
+    }
+
+    @include respond(tab-port) {   // width<900 ?
+        // handling 'phone' breakpoint with this only
+        font-size: 50%; // 1rem = 8px;
+    }
+    @include respond(big-desktop) {
+        font-size: 75%; // 1rem = 12px;
+    }
 }
 body {
     box-sizing: border-box;

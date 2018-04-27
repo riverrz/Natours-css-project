@@ -4,6 +4,22 @@ COLORS:
 Light green: #7ed56f
 Medium green: #55c57a
 Dark green: #28b485 */
+/* 
+0 - 600px     Phone
+600 - 900px     Tablet (Potrait)
+900 - 1200px     Tablet (Landscape)  ---> This is where our normal styles apply
+1800 +              Big desktop
+
+*/
+/*
+    Breakpoints argument choices: -
+    1. phone
+    2. tab-port
+    3. tab-land
+    4. big-desktop
+
+    1em = 16px (default browser font size)
+*/
 @keyframes moveInBottom {
   0% {
     opacity: 0;
@@ -45,6 +61,15 @@ html {
   /* font-size: 10px;   Using this doesnt allow user to enlarge the font view it better so instead we use 
     the % w.r.to 16px default browser font, so 10px is 62.5% of 16px*/
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
