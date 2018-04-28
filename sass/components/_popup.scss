@@ -45,7 +45,7 @@
         transition: all .5s .2s;
 
         @include respond(tab-land) {
-            width: 70%;
+            width: 80%;
             display: block;
         }
     }
@@ -94,12 +94,18 @@
 
         @include respond(tab-land) {
             font-size: 1.3rem;
+            margin-bottom: 2rem;
             -moz-column-count: unset;
             -moz-column-gap: unset;
             -moz-column-rule: unset;
             column-count: unset;
             column-gap: unset;
             column-rule: unset;
+        }
+
+        @include respond(phone) {
+            height: 15rem;
+            overflow: scroll;
         }
     }
     &:target &__content {
