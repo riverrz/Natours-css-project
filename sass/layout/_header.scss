@@ -1,13 +1,18 @@
 .header {
-    height: 95vh;
+    height: 85vh;
     background-image: linear-gradient(to right bottom, rgba($color-primary-light,0.8),rgba($color-primary-dark,0.8)) , url(../img/hero-small.jpg);
     background-size: cover;
     background-position: top;
     position: relative;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);         /* going clockwise in terms of co-ordinates*/
+    
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        height: 95vh;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);         /* going clockwise in terms of co-ordinates*/
+    }
 
     @media (min-resolution: 192dpi) and (min-width: 37.5em),
+           (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), // Safari doesnt have min-resolution query, so this is for safari
            (min-width:125em) {  // , here is like or        1em=16px
         background-image: linear-gradient(to right bottom, rgba($color-primary-light,0.8),rgba($color-primary-dark,0.8)) , url(../img/hero.jpg);
     }

@@ -118,11 +118,14 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
-  background-image: linear-gradient(to right, #7ed56f, #28b485);
-  -webkit-background-clip: text;
-  color: transparent;
+  color: green;
   letter-spacing: 2px;
   transition: all .2s; }
+  @supports (-webkit-background-clip: text) or (background-clip: text) {
+    .heading-secondary {
+      background-image: linear-gradient(to right, #7ed56f, #28b485);
+      -webkit-background-clip: text;
+      color: transparent; } }
   @media (max-width: 56.25em) {
     .heading-secondary {
       font-size: 3rem; } }
@@ -327,6 +330,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
@@ -463,11 +467,16 @@ body {
     height: 15rem;
     float: left;
     position: relative;
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    shape-outside: circle(50% at 50% 50%);
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
+    border-radius: 50%;
+    overflow: hidden;
     transform: translateX(-3rem) skewX(12deg); }
+    @supports (clip-path: circle(50% at 50% 50%)) or (-webkit-clip-path: circle(50% at 50% 50%)) {
+      .story__shape {
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        border-radius: none; } }
     @media (max-width: 37.5em) {
       .story__shape {
         transform: translateX(-3rem) skewX(0); } }
@@ -608,6 +617,11 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: all .3s; }
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    .popup {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.3); } }
   .popup:target {
     opacity: 1;
     visibility: visible; }
@@ -741,15 +755,18 @@ body {
     width: calc(3 * ((100% - 3 * 6rem)/4) + 2 * 6rem); }
 
 .header {
-  height: 95vh;
+  height: 85vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
-  position: relative;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  /* going clockwise in terms of co-ordinates*/ }
-  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+  position: relative; }
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    .header {
+      height: 95vh;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+      /* going clockwise in terms of co-ordinates*/ } }
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-width: 125em) {
     .header {
       background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg); } }
   @media (max-width: 37.5em) {
