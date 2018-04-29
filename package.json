@@ -29,5 +29,8 @@
     "node-sass": "^4.9.0",
     "npm-run-all": "^4.1.2",
     "postcss-cli": "^5.0.0"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
   }
 }

@@ -44,14 +44,14 @@ body {
     text-transform: uppercase;
     font-weight: 700;
     display: inline-block;
-    
-    color: green;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    -webkit-background-clip: text;
+    color: transparent;
+    // color: green;
 
-    @supports(-webkit-background-clip: text) or (background-clip: text) {
-        background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
-        -webkit-background-clip: text;
-        color: transparent;
-    }
+    // @supports(-webkit-background-clip: text) or (background-clip: text) {
+        
+    // }
     letter-spacing: 2px;
     transition: all .2s;
 
