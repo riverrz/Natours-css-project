@@ -9,6 +9,6 @@ app.get("/", (req,res)=> {
 })
 
 
-app.listen(8080, ()=> {
-    console.log("Server Running");
-})
+app.listen(process.env.PORT, process.env.IP, function () {
+    console.log("Server has started");
+});
